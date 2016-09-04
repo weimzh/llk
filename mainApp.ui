@@ -1,0 +1,563 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>mainWindows</class>
+<comment>this class is base class os llk program</comment>
+<author>AiLin Yang</author>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>543</width>
+            <height>492</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>21</width>
+            <height>185</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>800</width>
+            <height>600</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>800</width>
+            <height>600</height>
+        </size>
+    </property>
+    <property name="cursor">
+        <cursor>0</cursor>
+    </property>
+    <property name="caption">
+        <string> llk</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <property name="enabled">
+        <bool>true</bool>
+    </property>
+    <item text="&amp;Game" name="Game">
+        <action name="game_new"/>
+        <separator/>
+        <action name="game_load"/>
+        <action name="game_save"/>
+        <action name="game_pause"/>
+        <separator/>
+        <action name="game_fame"/>
+        <separator/>
+        <action name="game_quit"/>
+    </item>
+    <item text="&amp;Move" name="Move">
+        <action name="move_undo"/>
+        <action name="move_redo"/>
+        <separator/>
+        <action name="move_hint"/>
+        <action name="move_riffle"/>
+    </item>
+    <item text="&amp;Settings" name="Settings">
+        <action name="options_level"/>
+        <item text="&amp;Level" name="PopupMenuEditor_15" accel="">
+            <action name="options_levelAction"/>
+            <action name="options_levelNormalAction"/>
+            <action name="options_levelHardAction"/>
+        </item>
+        <separator/>
+        <action name="options_background"/>
+        <action name="options_toolbar"/>
+    </item>
+    <item text="&amp;Help" name="Help">
+        <action name="gameRuleAction"/>
+        <separator/>
+        <action name="AboutllkAction"/>
+    </item>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>toolBar</cstring>
+        </property>
+        <property name="label">
+            <string>Tools</string>
+        </property>
+        <action name="game_quit"/>
+        <action name="game_new"/>
+        <action name="game_save"/>
+        <action name="game_load"/>
+        <separator/>
+        <action name="game_pause"/>
+        <separator/>
+        <action name="move_undo"/>
+        <action name="move_redo"/>
+        <action name="move_hint"/>
+        <action name="move_riffle"/>
+        <separator/>
+        <action name="game_fame"/>
+        <action name="options_background"/>
+    </toolbar>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>game_new</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>image1</iconset>
+        </property>
+        <property name="text">
+            <string>NewGame</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;NewGame</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>game_load</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>image2</iconset>
+        </property>
+        <property name="text">
+            <string>Load</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Load</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+L</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>game_save</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>image3</iconset>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>game_pause</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset>image4</iconset>
+        </property>
+        <property name="text">
+            <string>Pause</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Pause</string>
+        </property>
+        <property name="accel">
+            <string>F7</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>game_fame</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image5</iconset>
+        </property>
+        <property name="text">
+            <string>Hall of Fame</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Hall of Fame</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>game_quit</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image6</iconset>
+        </property>
+        <property name="text">
+            <string>Quit</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Quit</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Q</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>move_undo</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image7</iconset>
+        </property>
+        <property name="text">
+            <string>Undo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Undo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>move_redo</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image8</iconset>
+        </property>
+        <property name="text">
+            <string>Redo</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Redo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Shift+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>move_hint</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image9</iconset>
+        </property>
+        <property name="text">
+            <string>Hint</string>
+        </property>
+        <property name="menuText">
+            <string>H&amp;int</string>
+        </property>
+        <property name="accel">
+            <string>F5</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>move_riffle</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image10</iconset>
+        </property>
+        <property name="text">
+            <string>Riffle</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Riffle</string>
+        </property>
+        <property name="accel">
+            <string>F6</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_level</cstring>
+        </property>
+        <property name="text">
+            <string>Level_game</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Level</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_background</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image11</iconset>
+        </property>
+        <property name="text">
+            <string>SettingBackground</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Changbackground</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action</cstring>
+        </property>
+        <property name="text">
+            <string>Action</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>AboutllkAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image12</iconset>
+        </property>
+        <property name="text">
+            <string>about llk</string>
+        </property>
+        <property name="menuText">
+            <string>about llk</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>AboutqtAction</cstring>
+        </property>
+        <property name="text">
+            <string>about qt</string>
+        </property>
+        <property name="menuText">
+            <string>about qt</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>config_game</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset>image13</iconset>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="menuText">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_toolbar</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Show &amp;Toolbar</string>
+        </property>
+        <property name="menuText">
+            <string>Show &amp;Toolbar</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_levelAction</cstring>
+        </property>
+        <property name="text">
+            <string>Easy</string>
+        </property>
+        <property name="menuText">
+            <string>Easy</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_levelNormalAction</cstring>
+        </property>
+        <property name="text">
+            <string>Normal</string>
+        </property>
+        <property name="menuText">
+            <string>Normal</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>options_levelHardAction</cstring>
+        </property>
+        <property name="text">
+            <string>Hard</string>
+        </property>
+        <property name="menuText">
+            <string>Hard</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>gameRuleAction</cstring>
+        </property>
+        <property name="text">
+            <string>Game rule </string>
+        </property>
+        <property name="menuText">
+            <string>Game rule </string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>Action_2</cstring>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </action>
+</actions>
+<images>
+    <image name="image0">
+        <data format="PNG" length="580">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000020b49444154388d959321681c4118857f31e217112b47548ca859b91091858a5d883896aa838a3b59a8c8c18970448425b0cb1051aa2b0295552144942522900c1c5c5dea622a4e54aca83851b122e6abc82de92521d007e3debcffcd7bff88fc0b23557b721bac48668d66f2bf5095aa9c0ea186624b190ee29067967c37c51fcd5023d58b02be1ec265ceec55c4ad0ab4097c77f8c382c5ce192af2822b2315005d02478ec5690ea4b43f0b8acc510c5c5833b3489e71c2bc85ae0014ee626e060ebfefe0dca1fa30990b68466372a36143603c4a031480000ebf1fe3f7128aed889e138b545f5ec7a04a6a04798cf1c805e68ef2c0b27c6b839f5ab8883788b9d1901aa5fdbc0c4f047aa8914a8d54d4165fdb8d27f47935dfbe3e0d75fcae08cc6fe0f704da258beb317005d71398a794fb09ebfda8d4c833b5aa64e5610a5387af67005c5de6f02767f5ab008644229518a9e8aec877ec660eaa5245ba2600cc1ba063719ee28c84be3e35122223e4db6b81f1280faa12009a8b099f8e4b7c5d02b098e74042f9c1f5d302409e45a828a24633ae274082af73982ff1c713a083bbf87e2f5a81738bafdfa32af8a3b86f277ba8af4bf00711dd6a061fd3f565591fc5ef2930c11f2644462876dd438dba2519ed82e28d022b9a53073470a7f70e7e38383da33949fbe01ea52f22459684c84856ecba608d64c34114985acabd88f1c0066b24b3cf7ca6bf048b766142a142130000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="470">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000019d49444154388d85913d6bdb5014861f825baa2183860c1a3268e8d62c81ecfd11f907dde2c9184fed96662a1db5a543215dd24e6d43a1e02ca529a4d8838b336490202d16d841022bd1cd87e1ed20c95fb5dcb33cf7c2b92fe73c1749973a572229e9e6d459c6efa7dd44435d7ff8a83ff2f5e4e0b0897a62776f1f49488256c7375a50699ab1dbf12549cde3d640eff4f4e0b049baa74980a4850159ca1c4f75abbeb69f4f4db0d2fe15b0b0ee010b8ebe9c40054e7e9ec1160fdf7c3a7acfe8596ddcb77482a2be4a8aa4fdb79fa50ba9de7865feeb60de85ef4792a456c7d74e2d9d042c9de02ee779ce4e869ddaee38a0d4411c1b7800e1ef181e431084b00141106355267d2b9b1beebfaf13b06d0b06e0acdb1082eb3a1080ebdab3bd8583f46e76e768981da27ec65e2fca99aad7287330ffef51ce7ece8b0cf5c60207c664ff5e304e003b77b1066168601dc28199d960ecc0b20033a1bd3ae52206c7b1200467cd2a71302c7110150e72f6973928ab3927d30e2ac7dfdad7ed1f9ba31b3c5e50e5251e8fa832be8f3ca85461e451a7ca6b3cccd5cd6db1c15f15fa94b226037b960000000049454e44ae426082</data>
+    </image>
+    <image name="image2">
+        <data format="PNG" length="728">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000029f49444154388d7d925d48937114c61ffb008b061b58b84828886852505291def441574917392232282822ca4b89828802eba2d20ba35d14eea27237c349d4f2c2d8206d4b226718339078df5079df5832c788ed654abf2eb63e06d2b97978ceff7fce7938cf11001654e14c1912298accb05fff891ac32ab0c5bb460bdf17e459ef916d2fc8ebf5a8f15e933eaf9a9024d5fea8b59d2fce0349dd7aa6a5aa0e2c13ea152a098d08a554e671a14b1a55afd6fd5bbff2ecc5abb73caed5b26d5b2e974b4d8f5bf4edf29c94929a470fe95ae9b65e1d8868e94d83339f9f2d2e6574a17de7cd0dde4dfb0eae5bbbf3af82d8748ca3e136dc7937ca8bdae95a7c3dcd58466139910074dd1d608569172549e6bca9e489b8dc2eb77c2e9fea37d7cbae33959c9b587679c90953925f3500bf93b75f76cb776c8bcc45539e79af9c31b73a8eb72ebffe45a9e36a4032acb244cbb2200b9dc3d769ceec266d1900643395f74cb6f2af8c0f8351ce5dc852e5427428012588c6810cf4bf180703fa42509884ae401463082e5fe923112cd076aa8b3f7760dbb6bc8e57f1b9291ddedea8c8c794fc3b9a147c9b547bb1453db9881cc72fe7475045e7bc72b96ee5bee7aaef60200c64213d5549e42b68547012284162248d350ccd473aff7161d6967f518a8ca5d4e893a63edb924b4abe33a53a29fe7a4aaa9322cf936a996d54cf68508e53ac56d0f724569e162ff3f1f740a1c22d18184cc034f43f8174087c7bdaf9e342a1004c97b78b05e3ef0dc8436c385d2e0e2720047dc1183c827397eeb379477bc585d26f05901d81fe700c2c880e52991883143cec8d528843d79d0112812cf55bdb58d9b06defdac117db2687de043e7c1a6ba899980f6fec905fc38b49b5ee6a50e85d5ca77f1e5670e695cea85581af21adfa79524f476fc8344cfd02e8d7667d09d161d50000000049454e44ae426082</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="661">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000025c49444154388da593414893611cc67fc6844f30f80c0f5fd0416f29757074284fed16ae43b893095dbc659ef498a76610e6216a87623b04ae43ba829809a91392668736a37281c106155b14b8b7fa6a2f34783a7ca611d1a5075efef03ffc9fdff3c0db2289ff5108803b94336dc503b146987433cfb0df4fdc64b07e8cba9f023b82f1e3d806d48d61e3f9ebcfc65446a4d23292c83e287cd32fbd9506c792fa97c627e7e538f35549ec03887e0dffa87d0a9086afa7a9bdab93dfa8fd1539bf51a3d18ce18412fb019044f2a68c24e94bf092f7fe09a081a169b9ed11232938a0199942695b9254fdf85d92547e1bcccdad605f285525499766b28a9cde96e39c30bb11e27e86704f07995538186a233557a4bbd9c6d55bd06d3a18bd9cc1797590e8b9abf413c5da29601c2038606c8cdc7a85d871c83caf30722a4cea599189104cad2dd06663ccaca7f0da27883f8d63fc06b639c56e07e7c792465fa442e98fb0db3b732b189b45a9fa50f20e9f9513eadb8b60fd1152cb45c23d50df29bff4b20e1d905fab800799b922bd87e0e262027c8b6dda3d82c1a169a3b294cded38bdd871ce0514f3770bd296347b5b2aa424a7332298fd8de0abe5e2fd05a287a1f2a64eef51c82d55e008a4178bc41a61124b39862d4c2ec7a16981df3a889c1c37d54752f2f693c0f9a1a4aa349b2e4825e9c635498fa5e92b59ad9cf92edafb043d7b04c66fb44ecc25a8bdef0f321f83f46a9e611b26b1b4c06813e2ab69ac8d32f1e102580b345a7709dcf681b2ebae18d78d98ae432bc6f3068ce7ad18af3362bcce60efba59e3ba11e3387d06ba0c24cb9268d17f7ee79f8844fe4605cab8f70000000049454e44ae426082</data>
+    </image>
+    <image name="image4">
+        <data format="PNG" length="676">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000026b49444154388d6d524f481471187d330df20bd66c4261a7939207db83344bc2ce96905a87140a3ae6411c58700d0f61b7f5d6ee41d243b41e441484d628c4a0944058572c5112158c5d255805931931ddcd34fd11035f87c93f33fa5d1edfe3bdf77ddf8f9f80734a0d1363b751c5bf2c9447027e21368b2c0b606ea64938706b0597d103643a20f95a20994565c50a98b486b5ed32f0fdcc2ee07bcbac89d84c5fddfa99a9c309f2aa615a498e130d4f915d07fff1b70d8f3b89b404fdd442c93bee953d6a38bdd2da43945eb75dc6169d8b917e83d4306d6bcdaf95d3015dc971a2e90c116d11c5476c9cff6e9b8efaf8c8a94d06a9570fe90550c3f34c6da35ff10f393aaf920b4e3ef93547942352c3e9bdfa662a1559c05fc5188a9edc95914839df2591026a2b6427c965045f01917b3e4f5e1a0b5e28511ed4955c511e9a7b265a6e14028527da4a06744d9a085e3f211b076d4cade6e1b12a97c448c02f1c5a40638582679f9cc3827d80bf587170916a1b59b50c6e4d88626c7621cb39d0f81e58de760630001daeb3629f0126013c6582a176436401ff1ce799dd8e6af7cf003800e6e2a335c0450988dc54fec85674519c69120e60f906ba53264a2f3bc5aa17285bce3bb8c4b73cc081eec9898f5ec934440060169ee7cb952c2ce0700d880ed9a87880f87df9b88f0e01514d86b9898dae406d9c83ef1c276ba1d16b5a1b65f5ee552283e8c548ce8506b5be2452c3f33f1e85a85e0fe997cedc5cd33cac6883d45bf334bd979e226aef21329688f4ce348dbea37d2d446fa6fbe9d669b3e00ed1437ac1a6d57f352f8d0599d450cead3191a16143b6a28b5ec93438f8ce40dfc0df23fd3fd9088ceb2cff5ac00000000049454e44ae426082</data>
+    </image>
+    <image name="image5">
+        <data format="PNG" length="744">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002af49444154388d8d914f68930718879f2fdf17fb65e84841462b1ba443c1083da4885821600a1ed65a86ba53e361d4e33c5812e6c11429454609ac08cd84614bf6e79b583b84b4a6e0a107450f756d414b1591582f5d9018ffc52f73fb92df0ec9a0b031fdc1cbc30fdec3cbfbd096d79dd03915bb97f564e0077d444e3b12393d972b37bd20f75ffc53eec40dbd91abca80a37e22637a2b49899c6a8323ea0f0e2b26a93eb72649d2cfcb0d4edc96d2ae347a5d2a97a5444e4a9795f71185633fc2577ba1954c2078887a72165a819eef6012e8fa166c0f32e38dfee9388483d0b14addecda773abaabdfdf5229548b379d733f7d62c797ec2d1c7cf4b2ea5efccc5f2a3eac962247fca53fd6aba5e9b8bfb4ad582d5dfed25f7afcb4fafbc2a553df18c00740083080674011f890c611ef4af53d76de91b6bcd6c36372e716f56a605a3bc82994c8e975f3dbee66fe6321ddb0e00e3a3a4e78b385617dfe7f16e44a67f252a2694165e57d67a2187d534d0b56a62518a39e9a87760b8e4d41bbddb0e158d075a1f1fdfc0558fe187e7dc05b7acf972f6f6ce8e1c4f5f26f91bd917db111591b931a1f9d2e64f554d98bf94256aeb233370a5949d95b8b0d2edd2d4cf51eee3d68002d9b2c949a130082ef63c160443ec0c72ae28a51036048012c2c2cc083ffa48d386b5468cbab121e53ad7b51ded1f3da6de7d4995ed05f92bcb9bbf22479736b0dce34fbccb23c49b54147677dadf7f0af7d8def4011c35ea7d3bec3f6640cf3da7dccbe4e4c6705b32f8c99b989f97827666a1eb32784999cc5d771886e9f1dc5e8f91e12fb31da83192318c54dcd53dfb315efc415bcc876bc13bfe0c542782b57f18eeec63b398b97d84fad6395e746f7f052fc40a82bd2b1edf69bd460dfcc8bca8b7bb1217d11b09cd6a01dc7c6c1b6e3042c87513b4ec672485a71262da79e3a9d5cf91b5fbfbf1491d19f300000000049454e44ae426082</data>
+    </image>
+    <image name="image6">
+        <data format="PNG" length="760">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002bf49444154388d6d93416853591486bf96275c610aaf90c52b64914017d3d0850919a8610aa6cb76d7d2c5b4e8a29859541d10bb29e9384814299a4567ecc848b308bcb89054416b8511bb50fabad03e4169164512a860c1813818688b047e172f512afe9bcb7fb8f79eff9cff1c005cc76414325a391197065cad0cf449037d2a2723527249e56311291951b93fe0ae6da4b09d01e870432633d91bbd55bb7886e8e3357c0309cbe003098bc3a769c59deb94fe88317970f02b0a1969f58674c291c6e3d2425c4f4e1e97fe294b0b1724bfaef57369e9ce13e9fcb0747f5d9bb3a3d2765dae6dd4b1f2739f46d271d65ebf64a8dbc633dda4fe7ec8b7d87fed71f45e01efe07f52c65009d9c46ede050db8d2eca8b410d7fab9611d42f19af45ed2c716ff24e96955ba3421f955957b6d752e73052cc3da0b48fdd9cabc0bde6f43706a860f6f1ec2d531761f15e008ecff500363a86c5c670ce81c2368d0d0f8d217b9ded51152e9cbd080eee323f816f4587168c0d1f8103e101b9c63b9099dcbcd7d1216546ab701a8dd9a236581b77105ba80c66ee0ca463ee040c28952d9c8b715cc01101bcc02101dcc8265480d66a10174f5048fd25978de2ab1ab9b583a4ba97940e772f33258e03f381b74bbf9122cf0da191b1fa0ade0a791e083ff26a83ccb3309a064449bf31381cfed6e1773d2bf9bd24e4037e7a702075ad82ae4a4ea9e5cc788727f44ca4f69fdfcb0949ffe7aabba25d5a577ab4b879cad16735229a76a2927394628b924cd4f0513f6fb68e0f38ebe8f624edade93eedc907624d7411dae8d265fd5f16e9e26d59e7563f08d21f1cb22bb2f0af4bc1da562e5891943ed88213a3e8377718cd45faba0b09d29ffe848db7569715af2abda5a9c965ebd930a178278312b55f7a4524e7aaf60174246e548b091286c675c1ba9df91db6b4bbdb6dc882d456cb96123858d5cc7488e911b42b28ddcd63a7f06a223ea918647f3230000000049454e44ae426082</data>
+    </image>
+    <image name="image7">
+        <data format="PNG" length="505">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000001c049444154388dcd913d68146110869fdd5bcdb79a83cd19614f6c36081288684c73cd61102cd408410c72c5092a88c15252048c0806b43095c4808870b6671a39451063110b11c1da349f58785bacec1197db0fb33a16879a40e24f137caa6186f79d195ef8aff0a624e73d91823725f9bfd5d83fabaae488381ebc4d5f7919f7a9ca8e7fdaae66e540ff842cc9b2c8e59a247e4d6e50919e3f2b2b625391fdfe78fbf5f50f22f716446459e4e44cdba8b37287caefdfb12931e42966e7abee50f3191cde0d97ea70eba8dbd5ef334e8949c6a47723038bb1f61ba5dc41af1bbbe841d1eb0c74047102619426e05e83f836f5c297752e70cf1bc3c1700f651df2eedcbe8e301e60258c98a3e41e021eac118fca566664985159b07e353f6e536e71ceefe54c8ff7633b2d13eb9b38c12332bd8413e4c8f45e9ce014993e8d13d457198845c6317584bbfe7b765d29c3f422b40630ada734d50a89018b32791629000fc998b458cd8838a02faa7c705575b3d3536000e58031400661927ee2b35b033d4da32f5e6bd031e9024ee070416da1ac8651e6255022322f784ec63cf09886d5eea4b01e236283de0e810b4d0ba70899fe0a410a3aa5d1f76da358379fef4c69ab40e7cf78680000000049454e44ae426082</data>
+    </image>
+    <image name="image8">
+        <data format="PNG" length="542">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000001e549444154388dc5913f68130114c67f8989ded508394c3157e21089d04c1a4490a0208220da428d5a0892c9e060db41ad825b11a493381575084ec541030eb10881c62911b5c4a5fe051ba5344142eea4ca9dcd35cf21d65a69218bf82defbde17dfcbef7e07fcbf5e7e0bf226ee528aa5d42cdf6b3295386e9306217b088f1dd4cb85a7f1bb8571a25255dca374e45cb46e6788437c59a559b4c523b52e5533c4056c9935052b2657d8ea468c18cdcbc7057eab22422ef454444663fb7ebc3a2c8ec73f9424a869910cfda0849d9018cc742d5d3ba4f6fbcaeb3688344fd862f1ed1745d47193a08134f2db22575a150e13c0e53dc77493bc20186817839a4df9a7a4b7f25c2be5a9d5821a09db8f184b1491bf3dc3d484454541f3dc1c30ce2a0ae129c694c83761dac220fba967eb30d34baf16a3bc14847435a3a18c00b50ae58ef4c534dd33416f16a6bbfb0ba2c9b39c408cf18f31fc3a7bc84f049505ec0d9dd309a077b2f2d3b4f797d0380818500e89782ddd6353df08bd8033860d8b42af34689a676d1bda1c1a39e3a0ee366af7a7baec68fcbfbc1b6a1da0bb57966686a4338cc6c4cb0a2be8f1a84af2a9a35a278d4ada651fd80a30f9273bd6a1fb113f5c9763cdc01f6e0300a3c26e75aeedca04db20dc25e98fb4a6ed772c77bff5c3f013408bbaf5cae9d6c0000000049454e44ae426082</data>
+    </image>
+    <image name="image9">
+        <data format="PNG" length="240">89504e470d0a1a0a0000000d494844520000001200000012080600000056ce8e57000000b749444154388dc594310e83300c45ff31381b636f523176ce713a968d05a96b060ec1fa3ac4561b40aa538622451f19f178712c04888ccea672ce02c2491224b1adc7be9804b32023e602dad6630674303aa02b2b95c77e1f37e209dca8af3e6e549b09980a63ac7bf5a3d1ddf2f2871ead32c02c1eb2536a3db541f6b2e5e0d096395a0de0905536472d937d64f2ad977bb2978326874612e80afd42d86467e4906929291132a98c3e4d1cd2fa57386df2ded14913cf17e50c853a2f6d890d0000000049454e44ae426082</data>
+    </image>
+    <image name="image10">
+        <data format="PNG" length="687">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000027649444154388d6d9231481b6118863f8bc38d29a4f00b29fc05875c270f42f1c0a1110b723a14a54bc0c1039748071b2a9460a1440be5a420e8209c8210170d0e12a9cb651074284d376dc19221c30db69c22e55a44783a4469357de1e3e7e57bfff7fdbe9f5f1a2b0d4444806967d8f9a4b58fd563917d1c60656cfc6e1f955428a5d0dd9a4a6f85ec4096fa429de24c7153825a30cd1ca894223be0e0af572186d2dc222c4170500760ffe010d6c01dcfb76a228f4e6924dc0a37b5d6b007fe4a85683bc65fab02400de21a780b7e8b7f064ea0b2bd0f3198191b71061d4a7325e28b96268a6200c2937fce0b28ce94600dea4721de1a3863799436916a5f95ca7695b80656c68688765c99730e84907de6620feea3521a31d326c460652c440477c20520bee571cd0b6f3cece111722f4b68ad119552d0041a901b73ff137fd325aa4171a94c780066da4412c9c44dcd454b585e2fff77126f23c06b823be361656cc44ffb6d412aa9300c83c5e55bbdab37f036a0be1e61f76511bb2f7b23a9d10cb17a2c12c9049cb46f515a0f8896c11a7070069d4b395c3e6c57ddbe78edde84700fece11194f631d3e6ee9dd56fabf22f7e8988dcfbcbfb9ff4cb686e544ebf9f8adc17197a3d24861822322b0ff403113eb60f708dca4605a3d3c0e83400286f07040b87e49e17514ae12ffbbb32f274a4b57ba3014014ddfc49f9e779a25711711cc33938e37974b7893bee368187120c042db7b48fdd6b130cef931bcb116e4578ef3c6842500b0070a78aa894a6305568029688484761aa909c7f3f5fdef9b02343c74332f97552be1c7f91b31f6777bb54d7a3d39fa7229722673f7f4bc2307ef53fe9df9b7d3bfba2a3a3e34844e40f9eecd0401850bf340000000049454e44ae426082</data>
+    </image>
+    <image name="image11">
+        <data format="PNG" length="723">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000029a49444154388da5934f48d30114c73feb0ffd8405338c2644cc30e8071d5a58f82b82f45092156b249151070d220f154887880e6297d09db240b2c0b22e85879a5a9633082718d9186d2b892d76d8c4428745fea8e5b7c32ca8ecd4f7f278ef7df9f2dee3fb1c92f81f38823ea805fa805a9b957d06876a3798352197b9b5da53b632556450f621fb3df46ef46dff7062f04684bbb93ca95f0a0a40701fc8478d5aac31491a8aab808c7e475c526828bd772d8dbf0482fb40759cc8f436cdffe4f9a7242b24996969643c26a52f48e12e694ad26c524a37cd5b6e4e1726f0b143812a5b8343ef5aebcce79a887dec8a4b3149f5e105c58029c5bd528bbb90cf4a0a55d96e831dbc3cef79acee7a790c0eb86045d3263a0be3df2f90d33d92be4863add2d76629da55a88fb7a9b992fb28f3f293d21dd2839e58f0947b50d1aa8f9a685bd8f982a46929ba10c34d922c69ba415250c163ae8c2373c3fa52da102e227b094a1b211100730e46736001c3365402cf6ca800de8cc34e135e24e0b6fd6909d75f5de1e6f6ef94fa217109cc06783e099b1b6120059bea2198828d29781887b5ed70cf0627843fdb72000eab84ddde728e5c3d681e666b994125f074062a6c189e81cf36e46dc0205cd5ce76f328d96bc5940ee432bfb9ca74e2d31df7a4faadc211ef9852d2921e344bc9a0da3a0d793524efac5fd35143ad9b79f497354d27fb75d1fd4dbda6d4e9512cd023494a7667a4cb2ef9931ef965aae31cf2ba38eb58ccdfcd1574b7dff21c67d486655998044a80d7c55067c330ccdcb3c75745f02d5d4c20354ba43891dbb3654d7ef55cae97e5eb4e32f3be9a22e71be62279963fc94fac8a70263f4ff49f5fe65ac6fafa7202da45a4ab868c7c643b76911cf1d069c0366029c0a22bfc8112c0b9c09d07a680b99fcd1f090dabaa9b9332870000000049454e44ae426082</data>
+    </image>
+    <image name="image12">
+        <data format="PNG" length="602">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000022149444154388d8d9321681c4114861f65c413152b57548ca859b925220b15b310712c55071577b25091838870448423b0cb10514a446521a69054841211968a83cb40e0e4d5c5941251718588932bce7c15b96b724908fd61c4c03fff7befffdf88dc8591f2f2d338c4222e36eae43ff0ecee458dc8d75f07ee4f350baf5442bb9584dcc5e41b197eaf8f1a299f54f3551bce72fa2f22c62a304de1dce2770beaf54354e489ae8c94d04093c29e657c920319d39f0585b3142d1b164c17c9239d34c34b680a40619e306a59fcb6a539b6a8de56e67446dde9921b0d2b02dd4e16a00004b0f8ed04bf9952ac452c39894879f83201553223c87d743b363443cb602766f2260e7e2ba6394d5688b9d19019e5f260121e082ca1464a355252c5f82a5e1961e9577d76f4d0d4eedb22301cc1750fae268ccfbbd07c83f31e0c3306db298bfd28d5c823b1aab8c16ec66ccbe2ab3e00a3610ed739b3df05d0261229c5484933225f8f577d509532d20501e0a286f994f16986351296f1a9911019215f5b08743b79509500507feff1717f80af06309f31bec88194c17bbbac16007217a1a2881a759cf7609ee2ab1c8613fc7e0fe6539827377b31159ae3185fbd4355f07bc9321df72f3e9a14bf13d1ccfaf0215b3c96c551fca6023dfc6e4a648462c3dec6a8cfc5715553bc56e08afac4024730d79b0e7e58f87248fd395b1a77cf7d11295c1a2223aed8b02136e2daad28ccb662069b11dd561c62232e7ee433fd057a0172ab0eacbd100000000049454e44ae426082</data>
+    </image>
+    <image name="image13">
+        <data format="PNG" length="840">89504e470d0a1a0a0000000d494844520000001200000012080600000056ce8e570000030f49444154388d9d935f6853571cc7bf49533c99addc6c140dac608b0c13d787ca063a908d09d2248aa3a554acd087a0636d710f770a23f6c1353e04cda05285423a18189190f64193cafc930725a90a062998bab62450465210ee0d31e45ebabb7e7d48ec9f7548e7170e9ff3e35ccef99c1fe7828f8868846096b6d864f24f926566f886cb9c8f461e0e7286db43d7a2609a088d55393a12059709726dd459f634a3afb41f1125fe4fd7ca619136722e7b9b6d1beaf0b1735f8b3b1c8f7fd287e37f8ce72756bce8c2787e02df1b5d489932686e6ec26a2a09d6fb864250a66a27a67836997a59e2ba5c0edc38514910970337c047c4f0c510a8fccb487cd61cb118dedcfd5757f23d4bbdb8b430f2d45b3efeaddaaab65ab75ba1aa1a0ecfedaf045e8ddff9117d0c64c7212c5e48f61c9a76dad68c384786c662d9ecef95b6fe1f86a1dca68fcfa8912497ab46a1b168221be10edfcfa3c8476a3de24623f3c48b44c57bc6d312feebe62dab10d7671bd27e7c09a1be56817a20375f40e7525721fc78a0e417d7907e6cc780fe1b3645b9c7975cac352351e3e246cae7420f3839fa392f4a6058c2f3c0c14d4675f37ad9e8311f3996930ab0b53722375f80ada5c65d8d883f4863b0c1d39a5eec3966376024e68c675f7dd4041cf2d6033003580100240379747e275f50a6a8c56e27c912199b22592293a99a55c041de13e4c82e7272b71c3b2d8133cf4d9c79687a6764eaec96a1bfd1a0e9bac72ac4d7a2d1ba17dac092680ab787bfb9f04566c909277280a1030d021948867341c8e172f16aaf0ee0a60a0030cb076400802ce4b856d6cfab85933d85a2ff8cef75fb60fc855d71ba0ac0a702e8960049c0e9d22d993dfaafbd07a4b3618b58ed75d548d3a0e93a260e5d61d0084258047443876c91b195daff8bdf8464300f77473f9429851f1a77879be6e0932060f909c1e9e0da9bf87beb4c4da7aaf3ff321a1e1ade12d71ba1b35b86fb683f7c43be0d8bc954f2bd5cff9dbbc34d134900807a57a5cd55fb09a701b5a862569a85a3e8804db26daa71b07a2d47d18153574f61752300f0b83c6bc5ff48fc6edcf41614479f311006b6430000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>move_redo</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>redo()</slot>
+    </connection>
+    <connection>
+        <sender>move_undo</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>undo()</slot>
+    </connection>
+    <connection>
+        <sender>move_hint</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>slotHintRiflePointsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>game_new</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>newGame()</slot>
+    </connection>
+    <connection>
+        <sender>game_load</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>slotLoad()</slot>
+    </connection>
+    <connection>
+        <sender>game_pause</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>Form1</receiver>
+        <slot>pause()</slot>
+    </connection>
+    <connection>
+        <sender>game_save</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>slotSave()</slot>
+    </connection>
+    <connection>
+        <sender>game_quit</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>quitGame()</slot>
+    </connection>
+    <connection>
+        <sender>options_level</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>changLevel()</slot>
+    </connection>
+    <connection>
+        <sender>game_fame</sender>
+        <signal>activated()</signal>
+        <receiver>Form1</receiver>
+        <slot>hallOfFame()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">mainApp.ui.h</include>
+</includes>
+<slots>
+    <slot>slotHintRiflePointsChanged()</slot>
+    <slot>slotEndOfGame()</slot>
+    <slot>enableItems()</slot>
+    <slot>newGame()</slot>
+    <slot>quitGame()</slot>
+    <slot>restartGame()</slot>
+    <slot>pause()</slot>
+    <slot>undo()</slot>
+    <slot>redo()</slot>
+    <slot>hint()</slot>
+    <slot>changLevel()</slot>
+    <slot>hallOfFame()</slot>
+    <slot>keyBindings()</slot>
+    <slot>slotLoad()</slot>
+    <slot>slotSave()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

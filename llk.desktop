@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/usr/bin/llk %i %m -caption "%c"
+Type=Application
+Name=LianLianKan
+Name[zh_CN]=连连看
+Type=Application
+GenericName=Puzzle Game
+GenericName[zh_CN]=智力游戏
+Icon=llk
+X-KDE-StartupNotify=true
+X-DCOP-ServiceType=Multi
+Categories=Qt;KDE;Game;BoardGame;

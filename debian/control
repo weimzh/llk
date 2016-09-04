@@ -1,0 +1,16 @@
+Source: llk
+Section: games
+Priority: optional
+Maintainer: Wei Mingzhi <whistler@openoffice.org>
+Build-Depends: debhelper (>= 5), libqt3-mt-dev, libsdl1.2-dev, sed
+Standards-Version: 3.7.2
+
+Package: llk
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: ShiSenSho-like board game
+ Lian Lian Kan is a board game which is heavily inspired
+ by the classic Mahjong solitaire game, ShiSen-Sho.
+ .
+ The object of the game is to remove all tiles from the
+ field.
